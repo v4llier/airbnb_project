@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+
   # get 'login/home' => 'login#home'
   resources :login
 
   devise_for :users
+
+  root "users#index"
 
   resources :flats do
     resources :bookings, except: [:destroy]
