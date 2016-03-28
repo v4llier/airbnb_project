@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
+
+  # get 'login/home' => 'login#home'
+  resources :login
 
   devise_for :users
 
