@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+  <div style="margin: 40px">
+      <!-- <div class="col-xs-offset-3 col-xs-6"> -->
+        <%= simple_form_for @flat do |f| %>
+        <%= f.text_field :title, placeholder: 'Add a short description of your hut'%>
+        <%= f.text_field :description, :size => 150,  placeholder: 'about this place'%>
+        <%= f.text_field :address, placeholder: 'address'%>
+        <%= f.text_field :city, placeholder: 'city'%>
+        <%= f.text_field :capacity, placeholder: 'how many people can fit?'%>
+        <%= f.text_field :price, placeholder: 'what\'s your price?'%>
+        <%= f.submit %>
+        <% end %>
+      <!-- </div> -->
+    </div>
+  </div>
+
+</div>
