@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
    get 'flats/search'
 
   resources :login
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   resources :flats do
     resources :bookings, except: [:destroy]
   end
+
+  resources :profile
 
 
   # root "index"
