@@ -1,7 +1,11 @@
-<p><%= current_user.email %></p>
-<p><%= current_user.first_name %></p>
-<p><%= current_user.last_name %></p>
+<div class="container">
+  <div class="row">
+    <p>Email: <%= current_user.email %> <i class="fa fa-pencil"></i></p>
+    <p>First name: <%= current_user.first_name %> <i class="fa fa-pencil"></i></p>
+    <p>Last name: <%= current_user.last_name %> <i class="fa fa-pencil"></i></p>
 
-<%= link_to "edit_profile", profile_edit_path %>
 
+    <%= link_to "add new hut", new_flat_path, :class=>"btn btn-default" %>
 
+  </div>
+</div>
