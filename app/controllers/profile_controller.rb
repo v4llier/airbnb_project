@@ -3,6 +3,7 @@ class ProfileController < ApplicationController
   end
 
   def edit
+    @profile = current_user
   end
 
   def create
