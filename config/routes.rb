@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
 
 
-   get 'flats/search'
+  get 'flats/search'
 
-  resources :login
+  # resources :login
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks'}
 
   root "flats#index"
 
