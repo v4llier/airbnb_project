@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <p>Email: <%= current_user.email %> <i class="fa fa-pencil"></i></p>
+    <p>First name: <%= current_user.first_name %> <i class="fa fa-pencil"></i></p>
+    <p>Last name: <%= current_user.last_name %> <i class="fa fa-pencil"></i></p>
+
+
+    <%= link_to "add new hut", new_flat_path, :class=>"btn btn-default" %>
+
+  </div>
+</div>
