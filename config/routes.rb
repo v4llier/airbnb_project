@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
-  # get 'login/home' => 'login#home'
-  resources :login
 
-  devise_for :users
+
+
+
+
+
+   get 'flats/search'
+
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
+
+  root "flats#index"
 
   resources :flats do
     resources :bookings, except: [:destroy]
   end
 
   resources :users
+
+
   # root "index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
