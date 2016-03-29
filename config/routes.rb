@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'profile/index'
+
+  get 'profile/edit'
+
+  get 'profile/create'
+
+  get 'profile/new'
+
+  get 'profile/update'
+
+  get 'profile/destroy'
+
+  get 'profile/show'
+
   # get 'booking/index'
 
   # get 'booking/new'
@@ -27,7 +41,7 @@ Rails.application.routes.draw do
   # get 'flats/create'
 
   # get 'login/home' => 'login#home'
-  resources :login
+  # resources :login
 
   devise_for :users
 
@@ -36,6 +50,8 @@ Rails.application.routes.draw do
   resources :flats do
     resources :bookings, except: [:destroy]
   end
+
+  resources :profile
 
 
   # root "index"
