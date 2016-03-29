@@ -46,6 +46,21 @@ class FlatsController < ApplicationController
     end
   end
 
+  def search
+    # input
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+    @guests = params[:guests]
+    @city = params[:city]
+
+    # some thinking
+
+    # output (will have to be filered)
+    @flats = Flat.all
+
+  end
+
+
 
 
   private

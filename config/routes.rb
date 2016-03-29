@@ -1,32 +1,8 @@
 Rails.application.routes.draw do
 
-  # get 'booking/index'
 
-  # get 'booking/new'
+   get 'flats/search'
 
-  # get 'booking/create'
-
-  # get 'booking/edit'
-
-  # get 'booking/update'
-
-  # get 'booking/show'
-
-  # get 'flats/new'
-
-  # get 'flats/edit'
-
-  # get 'flats/index'
-
-  # get 'flats/show'
-
-  # get 'flats/destroy'
-
-  # get 'flats/update'
-
-  # get 'flats/create'
-
-  # get 'login/home' => 'login#home'
   resources :login
 
   devise_for :users
