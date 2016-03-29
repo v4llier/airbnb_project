@@ -2,3 +2,59 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+
+.banner {
+  background: url(image_path("img-landing.jpg"));
+  background-size: cover;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-family: Raleway, Helvetica, sans-serif;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
+
+}
+
+.banner h2 {
+  font-family: Raleway, Helvetica, sans-serif;
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+// .banner .btn {
+//   margin-top: 20px;
+// }
+
+.img-landing {
+  background-image: cover;
+  background-position: top;
+}
+
+body {
+  margin: 0;
+  font-family: Open-sans, sans-serif;
+}
+
+.title-card {
+  font-family: Raleway, Helvetica, sans-serif;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-lead {
+  font-family: Open-sans, sans-serif;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
