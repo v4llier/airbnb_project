@@ -47,6 +47,20 @@ h1, h2, h3 {
 
 }
 
-#home-search {
+#home-search-btn {
   margin-top: 0px; // to correct bootstrap standard format
+}
+
+.home-search-form {
+
+}
+
+.search {
+  margin-top: -25%;
+}
+.search .form-section{
+  background:rgba(0,0,0,0.6);
+  border: 2px solid #414141;
+  border-radius: 5px;
+  padding: 10px;
 }
