@@ -52,8 +52,10 @@ class FlatsController < ApplicationController
     @end_date = params[:end_date]
     @guests = params[:guests]
     @city = params[:city]
+    p params
 
     # some thinking
+    # p Flats.include? @city
 
     # output (will have to be filered)
     @flats = Flat.all

@@ -1,6 +1,6 @@
-<div class="form-background" id="home-searchform">
+<div id="home-search-form">
 <form action="/flats/search" class="form-inline">
-   <input type="text" name="city" class="form-control input-lg" placeholder="city">
+   <input type="text" value="New York" name="city" class="form-control input-lg" placeholder="city">
    <input type="date" name="start_date" class="form-control input-lg" placeholder="check in">
    <input type="date" name="end_date"class="form-control input-lg" placeholder="check out">
    <select name="guests" class="form-control input-lg">
@@ -9,6 +9,6 @@
      <option <%= "value=\"#{x + 1}\""%> > <%= x + 1 %> guests</option>
    <% end %>
    </select>
-   <input type="submit" id="home-search" class="btn btn-danger btn-lg" value="Search">
+   <input type="submit" id="home-search-btn" class="btn btn-danger btn-lg" value="Search">
  </form>
 </div>
