@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :login
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   root "flats#index"
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :bookings, except: [:destroy]
   end
 
-  resources :profile
+  resources :users
 
 
   # root "index"
