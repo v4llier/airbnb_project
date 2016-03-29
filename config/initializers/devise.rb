@@ -1,18 +1,25 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  Devise.setup do |config|
+    config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+    scope: 'email',
+    info_fields: 'email, first_name,last_name',
+    image_size: 'large'
+  end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '9151ae122af185d4db43bc71dc26fc186d8aa0219399c75a87667e20d0233474b21a2fd00c40b7649fd2b2bb73c3a63e1a8ba1ff8e4e6f1882ca68cf90e84d93'
+  # config.secret_key = 'f1d0ba7b7e35b1f549b06f77c061c9327714fda48ea1375f9b7f54060fb30742e27a9d1918f9ae08972d162c1437ef764704907029cb0a540f46d39813897dd6'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'the-best-airbnb-in-town@airbnb.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -99,7 +106,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '89a27e7632cbf3431d1c0421d2ac22a8875aadc7bd38b040d5d7d5b856c8c17361ffc7d39a515e16eae6df7e9410c5f92072e300ecb6716af131742e8ca5ec31'
+  # config.pepper = 'c89be48bb2484d6d01fd53baec38e31cf4aff4af7ed4e3f69a599d168a8cae9dd6cd281525cee15eee46037240c69655cc3141bdf12f1ecf54f76cc291a2b38d'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -262,4 +269,5 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
 end
