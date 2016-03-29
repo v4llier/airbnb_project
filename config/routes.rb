@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
 
 
+
+
+
    get 'flats/search'
 
-  resources :login
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 

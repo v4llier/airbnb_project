@@ -1,4 +1,5 @@
 class FlatsController < ApplicationController
+
   before_action :set_flat, only: [:show, :update, :destroy, :edit]
 
   def new
