@@ -1,12 +1,16 @@
-<%= @start_date %>
+<p>Start date: <%= @start_date %></p>
 <br>
-<%= @end_date %>
+<p>End date: <%= @end_date %></p>
 <br>
-<%= @guests %>
+<p>Guets: <%= @guests %></p>
 <br>
-<%= @city %>
+<p>City: <%= @city %></p>
 <br>
 <% @flats.each do |flat|  %>
-<%= flat %>
+<p>Hut title : <%= flat.title %></p>
+<p>Hut address : <%= flat.address %></p>
+<p>Hut capacity : <%= flat.capacity %></p>
+<p> -------------------------------- </p>
+
 <% end %>
 
