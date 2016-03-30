@@ -3,50 +3,35 @@
       <div>
         <h1>Welcome to Hut Hunters</h1>
         <h2>Experiment big things in small things</h2>
-        <a href="" class="btn-landing">Adventure starts here!</a>
            <%= render "searchform" %>
-
       </div>
     </div>
 
+<div class="container"><br>
+    <p class="card-title">Explore the world</p>
+    <p class="card-subtitle">Discover amazing huts</p><br>
+</div>
 
-    <hr>
+<div class="container">
 
-    <class= "title-card">Explore the world</h3>
-    <class="text-lead">Discover amazing huts</class>
+  <% @flats.each do |flat| %>
 
-
-    <hr>
-
-
-    <div class="container">
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 card-margin">
-          <%= image_tag "hut2.jpg", class:"img-radius" "Galapagos Islands" %>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 card-margin">
-          <%= image_tag "hut3.jpg", class:"img-radius" "Ethiopia" %>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 card-margin">
-          <%= image_tag "hut4.jpg", class:"img-radius" "Hawaiian Islands" %>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 card-margin">
-          <%= image_tag "hut5.jpg", class:"img-radius" "Tanzania" %>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 card-margin">
-          <%= image_tag "hut6.jpg", class:"img-radius" "Malaysia" %>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 card-margin">
-          <%= image_tag "hut7.jpg", class:"img-radius" "Maldive Islands" %>
-        </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 card" style="background-image: url(<%= asset_path 'hut2.jpg' %>)" >
+      <div class="card-description">
+        <p><%= flat.title %> - <%= flat.city %></p>
       </div>
     </div>
+
+  <% end %>
+
+</div>
+
+
+
+
+
+
+
 
 
 
