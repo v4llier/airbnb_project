@@ -1,0 +1,12 @@
+<% @start_date = "2016-04-02"%>
+<% @end_date = "2016-04-10"%>
+<% @flat = Flat.find(22) %>
+<% @booking = Booking.new(start_date: @start_date, end_date: @end_date) %>
+<% @guests = 2 %>
+
+
+<%= simple_form_for [ @flat, @booking ] do |f| %>
+  <%= f.input :start_date, input_html: { class: 'form-control input-lg' } %>
+  <%= f.input :end_date, input_html: { class: 'form-control input-lg' } %>
+  <%= f.button :submit, "Book !", class: 'btn btn-danger btn-lg' %>
+<% end %>
