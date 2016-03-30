@@ -1,4 +1,5 @@
 class FlatsController < ApplicationController
+
   before_action :set_flat, only: [:show, :update, :destroy, :edit]
 
   def new
@@ -45,6 +46,23 @@ class FlatsController < ApplicationController
       end
     end
   end
+
+  def search
+    # input
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+    @guests = params[:guests]
+    @city = params[:city]
+    p params
+
+    # some thinking
+    # p Flats.include? @city
+
+    # output (will have to be filered)
+    @flats = Flat.all
+
+  end
+
 
 
 
