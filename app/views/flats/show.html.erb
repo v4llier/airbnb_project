@@ -1,14 +1,17 @@
-<div class = "flat-image-banner" style = 'text-align: center'>
-    <%= image_tag "hut_sea.jpeg", id:"img_detail" %>
+<div class="banner" style="background-image: linear-gradient(1deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 20%), url(https://media.giphy.com/media/V8oovAwCDG02A/giphy.gif);">
+  <div class="banner-content">
+    <p>Details</p>
+  </div>
 </div>
+
     <div class = "container" >
         <div class = "row" id = "avatar_row">
-                <div class = "col-xs-3 text-center" id = "avatar_column" style= "" >
-                <p> </p>
+                <div class = "col-xs-2 col-xs-offset-2 text-center" id = "avatar_column" style= "" >
+                <br />
                  <p> </p>
                 <%= image_tag "anne.jpg", id: "avatar" %>
                 </div>
-                 <div class = "col-xs-9 text-center" id = "avatar_column" style= "" >
+                 <div class = "col-xs-8 text-center" id = "avatar_column" style= "" >
                 <h3>
                     <%= @flat.title %>
                 </h3>
@@ -21,21 +24,17 @@
     </div>
 <div class = "container" >
     <div class = "row" >
-        <div class = "col-xs-12">
-        </div>
+
     </div>
-    <div class = "row icons" >
-        <div class = "col-xs-6 col-sm-3 text-center icon">
+    <div class = "row_icons" >
+        <div class = "col-xs-1 col-xs-offset-2 col-sm-3 text-center icon">
             <p>Icon 1</p>
         </div>
-        <div class = "col-xs-6 col-sm-3 text-center icon">
+        <div class = "col-xs-1 col-sm-2 text-center icon">
             <p>Icon 2</p>
         </div>
-        <div class = "col-xs-6 col-sm-3 text-center icon">
+        <div class = "col-xs-1 col-sm-3 text-center icon">
              <p>Icon 3</p>
-        </div>
-        <div class = "col-xs-6 col-sm-3 text-center icon">
-             <p>Icon 4</p>
         </div>
     </div>
 </div>
