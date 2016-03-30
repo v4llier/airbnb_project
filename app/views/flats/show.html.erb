@@ -1,5 +1,59 @@
+<div class = "flat-image-banner" style = 'text-align: center'>
+    <%= image_tag "hut_sea.jpeg", id:"img_detail" %>
 
-<p>
-<%= @flat.title %>
-</p>
 
+
+</div>
+
+
+    <div class = "container" >
+        <div class = "row" id = "avatar_row">
+                <div class = "col-xs-3 text-center" id = "avatar_column" style= "" >
+                <p> </p>
+                 <p> </p>
+                <%= image_tag "anne.jpg", id: "avatar" %>
+                </div>
+                 <div class = "col-xs-9 text-center" id = "avatar_column" style= "" >
+                <h3>
+            	    <%= @flat.title %>
+                </h3>
+                <p>
+                    <%= @flat.city %>, <%= @flat.address %>
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class = "container" >
+
+    <div class = "row" >
+        <div class = "col-xs-12">
+
+        </div>
+    </div>
+    <div class = "row icons" >
+        <div class = "col-xs-6 col-sm-3 text-center icon">
+            <p>Icon 1</p>
+        </div>
+        <div class = "col-xs-6 col-sm-3 text-center icon">
+            <p>Icon 2</p>
+        </div>
+        <div class = "col-xs-6 col-sm-3 text-center icon">
+        	 <p>Icon 3</p>
+        </div>
+        <div class = "col-xs-6 col-sm-3 text-center icon">
+        	 <p>Icon 4</p>
+        </div>
+    </div>
+</div>
+
+<div class = "container" >
+    <div class = "row" >
+        <div class = "col-xs-12 col-xs-offset-1">
+            <h5>Hut description</h5>
+            <p><%= @flat.description %></p>
+        </div>
+    </div>
+</div>

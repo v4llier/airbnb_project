@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
+  root to: 'flats#index'
+  get 'flats/search'
 
 
+  # resources :login
 
-
-
-
-   get 'flats/search'
-
-
-  devise_for :users, :controllers => { registrations: 'registrations' }
-
-  root "flats#index"
+  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks'}
 
   resources :flats do
     resources :bookings, except: [:destroy]
