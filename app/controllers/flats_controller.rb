@@ -32,7 +32,8 @@ class FlatsController < ApplicationController
   def show
     @start_date = params[:start_date]
     @end_date = params[:end_date]
-    @booking = Booking.new(start_date: @start_date, end_date: @end_date)
+    @guests = params[:guests] ? params[:guests].gsub(/[^0-9]/, '').to_i : 1
+    @booking = Booking.new(start_date: @start_date, end_date: @end_date, guests: @guests)
   end
 
   def destroy
