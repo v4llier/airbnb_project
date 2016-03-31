@@ -82,6 +82,15 @@
       </div>
       <% end %>
     </div>
+
+    <% if current_user == nil %>
+    <% elsif @flat.user.id == current_user.id %>
+    <button class="btn btn-default">
+    <%= link_to "edit image(s)", new_flat_image_path(@flat) %>
+    </button>
+    <% end %>
+
+
     <div>
       <%= render 'bookings/form' %>
     </div>
