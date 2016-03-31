@@ -63,8 +63,12 @@ class FlatsController < ApplicationController
     search_error?(@city, @guests, @start_date, @end_date)
 
     matching_flats = Flat.all.where(city: @city, capacity: (@guests..15))
+    # Excludes according to unavailability table
+    flats = generate_available_flats_from_unavailabilities(matching_flats, @start_date, @end_date)
+    # Excludes according to booking table
+    generate_available_flats_from_bookings(flats, @start_date, @end_date)
 
-    generate_available_flats(matching_flats, @start_date, @end_date)
+    redirect_to root_path, alert: "Nothing available for your dates. Try different dates." if @flats.nil?
 
   end
 
@@ -73,7 +77,7 @@ class FlatsController < ApplicationController
 
   def search_error?(city, guests, start_date, end_date )
 
-    if Time.now.strftime('Y%-m%-d%') > end_date
+    if Time.now.strftime("%Y-%m-%d") > start_date
       redirect_to root_path, alert: "Do you really want to book a hut in the past \?\? Please go back to the future first !"
       return
     end
@@ -94,12 +98,30 @@ class FlatsController < ApplicationController
     end
   end
 
-  def generate_available_flats(flats, search_start_date, search_end_date)
+  def generate_available_flats_from_unavailabilities(flats, search_start_date, search_end_date)
      c = search_start_date
      d = search_end_date
     flats.each do |f|
       can_be_added = true # initalize
       no_go = Unavailability.all.where(flat_id: f.id)
+      no_go.each do |no|
+        a = no.start_date.to_s # date format is stored in YY-MM-DD
+        b = no.end_date.to_s
+        if (c > a && c < b) || (d > a && d < b) || (c < a && d > a)
+          can_be_added = false
+          break
+        end
+      end
+      @flats << f if can_be_added
+    end
+  end
+
+  def generate_available_flats_from_bookings(flats, search_start_date, search_end_date)
+     c = search_start_date
+     d = search_end_date
+    flats.each do |f|
+      can_be_added = true # initalize
+      no_go = Booking.all.where(flat_id: f.id)
       no_go.each do |no|
         a = no.start_date.to_s # date format is stored in YY-MM-DD
         b = no.end_date.to_s
