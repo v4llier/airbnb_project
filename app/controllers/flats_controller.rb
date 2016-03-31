@@ -8,6 +8,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+    @flat.user = current_user
 
     respond_to do |format|
       if @flat.save
@@ -29,7 +30,9 @@ class FlatsController < ApplicationController
   end
 
   def show
-
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+    @booking = Booking.new(start_date: @start_date, end_date: @end_date)
   end
 
   def destroy
@@ -105,6 +108,6 @@ class FlatsController < ApplicationController
 
 
   def flat_params
-    params.require(:flat).permit(:title, :description, :city, :capacity, :address, :price, :user_id)
+    params.require(:flat).permit(:title, :description, :city, :capacity, :address, :price)
   end
 end
