@@ -11,8 +11,31 @@
       <p>Last name: <%= current_user.last_name %> <i class="fa fa-pencil"></i></p>
 
 
-
       <%= link_to "add new hut", new_flat_path, :class=>"btn btn-default" %>
-    </div>
+      <%= link_to "edit password", edit_user_registration_path, :class=>"btn btn-default" %>
+
+      <h3>Your Huts</h3>
+      <div style="padding: 0 500 0 0">
+        <% @flats.each do |flat| %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= flat.images[0].photo if flat.images[0] != nil %>);">
+          <div class="card-category"><%= flat.city %></div>
+          <div class="card-description">
+            <h2><%= flat.title %></h2>
+            <p><%= flat.address %></p>
+
+          </div>
+          <%= link_to "", flat_path(flat), class: "card-link" %>
+
+          <div class="card-edit" style="z-index:999;"><%= link_to ("<i class='fa fa-pencil'></i>").html_safe, edit_flat_path(flat)%></div>
+          <div class="card-delete" style="z-index:999;"><%= link_to ("<i class='fa fa-trash'></i>").html_safe, flat_path(flat), method: :delete, data: { confirm: "Are you sure?" } %></div>
+        </div>
+        <% end %>
+      </div>
+
+
+
+
+    </p>
   </div>
+</div>
 </div>

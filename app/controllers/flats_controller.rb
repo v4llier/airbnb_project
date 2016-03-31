@@ -36,6 +36,10 @@ class FlatsController < ApplicationController
   end
 
   def destroy
+    @user = @flat.user_id
+    @flat.destroy
+
+    redirect_to user_path(@user), notice: 'hut was successfully deleted.'
   end
 
   def update
