@@ -73,13 +73,22 @@ class FlatsController < ApplicationController
 
   def search_error?(city, guests, start_date, end_date )
 
-    redirect_to root_path, alert: "End date should before start date, please try again" if start_date > end_date
+    if Time.now.strftime('Y%-m%-d%') > end_date
+      redirect_to root_path, alert: "Do you really want to book a hut in the past \?\? Please go back to the future first !"
+      return
+    end
+    if start_date > end_date
+      redirect_to root_path, alert: "End date should before start date, please try again"
+      return
+    end
 
     flats_from_city = Flat.all.where(city: city)
     if flats_from_city.empty?
       redirect_to root_path, alert: 'Unfortunately, we don\'t have huts in that area :('
+      return
     elsif flats_from_city.where(capacity: (guests..15)).empty?
       redirect_to root_path, alert: 'Unfortunately, we don\'t have flats available for this number of guests'
+      return
     else
       true
     end
