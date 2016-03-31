@@ -11,18 +11,23 @@ class BookingsController < ApplicationController
 
   def create
     @flat = Flat.find(params[:flat_id])
-    # @user = current_user
-    @user = User.first # for testing !!
-
-    render 'flats/show' if !@user
-
     @booking = @flat.bookings.build(booking_params)
+    @user = current_user
+    # @user = User.first # for testing !!
+
+    if !@user
+
+    redirect_to flat_path(@flat), alert: 'Booking failed. Please first login to book a hut.'
+    # can't save and is redirected if not logged
+      return
+    end
+
     @booking.user_id = @user.id
 
     if @booking.save
       redirect_to flat_booking_path(@flat, @booking)
     else
-      redirect_to flat_path(@flat)
+      redirect_to flat_path(@flat), alert: 'Something wrong in your controller ;-)'
     end
   end
 
@@ -47,6 +52,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :comment, :rating)
+    params.require(:booking).permit(:start_date, :end_date, :comment, :rating, :guests)
   end
 end
