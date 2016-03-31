@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Unavailability.destroy_all
 Flat.destroy_all
 User.destroy_all
+
 
 
 user = User.create( first_name:'maxence', last_name:'snoy', email: 'maxence.snoy@gmail.com', password: "xxxxxxxx", created_at: Time.now,
@@ -23,11 +25,29 @@ Flat.create( city:'Ouagadougou', address:'3, Bd Ratag  Rima', capacity: (2..5).t
 user = User.create( first_name:'xam', last_name:'owning', email: 'xam.owning@gmail.com', password: "xxxxxxxx", created_at: Time.now,
   updated_at: Time.now)
 
-Flat.create( city:'New York', address:'4, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
+flat = Flat.create( city:'New York', address:'1, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
  user_id:  user.id, pics: ['hut4'], title: "Awesome hut", description: Faker::Lorem.paragraph)
-Flat.create( city:'New York', address:'5, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
+Unavailability.create(start_date:"2016-04-01", end_date:"2016-04-10", flat_id: flat.id)
+
+flat = Flat.create( city:'New York', address:'2, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
   user_id:  user.id, pics: ['hut5'], title: "Hippie hut", description: Faker::Lorem.paragraph)
-Flat.create( city:'New York', address:'6, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
+Unavailability.create(start_date:"2016-04-11", end_date:"2016-04-20", flat_id: flat.id)
+
+flat = Flat.create( city:'New York', address:'3, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
   user_id:  user.id, pics: ['hut6'], title: "Master bong hut", description: Faker::Lorem.paragraph)
+Unavailability.create(start_date:"2016-04-21", end_date:"2016-04-30", flat_id: flat.id)
+
+flat = Flat.create( city:'New York', address:'4, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
+ user_id:  user.id, pics: ['hut4'], title: "Awesome hut", description: Faker::Lorem.paragraph)
+Unavailability.create(start_date:"2016-05-01", end_date:"2016-05-10", flat_id: flat.id)
+
+flat = Flat.create( city:'New York', address:'5, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
+  user_id:  user.id, pics: ['hut5'], title: "Hippie hut", description: Faker::Lorem.paragraph)
+Unavailability.create(start_date:"2016-05-11", end_date:"2016-05-20", flat_id: flat.id)
+
+flat = Flat.create( city:'New York', address:'6, main street', capacity: (2..5).to_a.sample, price: (1..10).to_a.sample,
+  user_id:  user.id, pics: ['hut6'], title: "Master bong hut", description: Faker::Lorem.paragraph)
+Unavailability.create(start_date:"2016-05-21", end_date:"2016-05-30", flat_id: flat.id)
+
 
 
