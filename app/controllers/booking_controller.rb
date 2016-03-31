@@ -1,4 +1,4 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :edit]
 
   def index
@@ -10,44 +10,44 @@ class BookingController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @flat = Flat.find(params[:flat_id])
+    # @user = current_user
+    @user = User.first # for testing !!
 
-    respond_to do |format|
-      if @booking.save
-        format.html { redirect_to booking_path(@booking.id), notice: 'booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
-      else
-        format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
+    render 'flats/show' if !@user
+
+    @booking = @flat.bookings.build(booking_params)
+    @booking.user_id = @user.id
+
+    if @booking.save
+      byebug
+      redirect_to flat_booking_path(@flat, @booking), notice: 'Booking was successful. I have a pleasant stay !'
+    else
+      redirect_to flat_path(@flat)
     end
   end
+
 
   def edit
   end
 
   def update
-    respond_to do |format|
-      if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'booking was successfully updated.' }
-        format.json { render :show, status: :ok, location: @booking }
-      else
-        format.html { render :edit }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
-    end
+
+    # TO REMOVE JASON STUFF
   end
 
   def show
+
   end
 
   private
 
   def set_booking
+    @flat = Flat.find(params[:flat_id])
     @booking = Booking.find(params[:id])
   end
 
   def booking_params
-    params.require(:booking).permit(:title, :description, :city, :capacity, :address, :price, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :comment, :rating)
   end
 end
