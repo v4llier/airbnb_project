@@ -33,6 +33,8 @@ class FlatsController < ApplicationController
     @start_date = params[:start_date]
     @end_date = params[:end_date]
     @booking = Booking.new(start_date: @start_date, end_date: @end_date)
+    @alert_message = "You are viewing #{@flat.title}"
+    @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
   end
 
   def destroy
@@ -65,6 +67,13 @@ class FlatsController < ApplicationController
 
     generate_available_flats(matching_flats, @start_date, @end_date)
 
+  end
+
+  def built_address
+
+      @city = params[:city]
+      @address = params[:address]
+      @address + ", " + @city
   end
 
 

@@ -1,0 +1,13 @@
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @flat_coordinates %>;
+      alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
+
+<p>TEST</p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450*300&sensor=false&zoom=16&markers=#{@flat.latitude}%2C#{@flat.longitude}" %>
+
