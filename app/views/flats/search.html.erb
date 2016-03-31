@@ -6,11 +6,23 @@
 <br>
 <p>City: <%= @city %></p>
 <br>
-<% @flats.each do |flat|  %>
-<p>Hut title : <%= flat.title %></p>
-<p>Hut address : <%= flat.address %></p>
-<p>Hut capacity : <%= flat.capacity %></p>
-<p> -------------------------------- </p>
 
+<% @flats.each do |flat|  %>
+  <p>Hut title : <%= flat.title %></p>
+  <p>Hut address : <%= flat.address %></p>
+  <p>Hut capacity : <%= flat.capacity %></p>
+
+  <%= form_tag flat_path(flat), :method => 'get' do %>
+  <%= hidden_field_tag :start_date, @start_date %>
+  <%= hidden_field_tag :end_date, @end_date %>
+  <%= hidden_field_tag :guests, @guests %>
+  <%= submit_tag "View details" , { class: 'btn btn-primary btn-danger'} %>
+  <% end %>
+
+
+  <p> -------------------------------- </p>
 <% end %>
+
+
+
 
