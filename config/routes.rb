@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'flats#index'
   get 'flats/search'
 
@@ -9,9 +10,11 @@ Rails.application.routes.draw do
 
   resources :flats do
     resources :bookings, except: [:destroy]
+    resources :images, only: [:new, :create, :destroy]
   end
 
-  resources :users
+  resources :users, only: [:show]
+
 
 
   # root "index"

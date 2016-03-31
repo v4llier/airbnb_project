@@ -1,0 +1,19 @@
+<%= form_for [@flat, @image]  do |f| %>
+<div class="container">
+    <div class="field">
+      <%= f.label :photo %><br>
+      <%= f.file_field :photo %>
+      <%= f.hidden_field :photo_cache %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to "back to hut page", flat_path(@flat) %>
+  </div>
+
+  <% @flat.images.each do |flat| %>
+    <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill  %>
+  <% end %>
+</div>
+
+<% end %>
