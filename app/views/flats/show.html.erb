@@ -1,21 +1,20 @@
-<div class = "flat-image-banner" style = 'text-align: center'>
-    <%= image_tag "hut_sea.jpeg", id:"img_detail" %>
-
-
-
+<div class="banner_detail" style="background-image: url(https://media.giphy.com/media/V8oovAwCDG02A/giphy.gif);">
+  <div class="banner-content">
+    <p>Details</p>
+  </div>
 </div>
-
 
     <div class = "container" >
         <div class = "row" id = "avatar_row">
-                <div class = "col-xs-3 text-center" id = "avatar_column" style= "" >
-                <p> </p>
+                <div class = "col-xs-2 col-xs-offset-2 text-center" id = "avatar_column" style= "" >
+                <br />
                  <p> </p>
                 <%= image_tag "anne.jpg", id: "avatar" %>
                 </div>
-                 <div class = "col-xs-9 text-center" id = "avatar_column" style= "" >
+
+                 <div class = "col-xs-8 text-center" id = "avatar_column" style= "" >
                 <h3>
-            	    <%= @flat.title %>
+                    <%= @flat.title %>
                 </h3>
                 <p>
                     <%= @flat.city %>, <%= @flat.address %>
@@ -25,35 +24,88 @@
         </div>
     </div>
 
+<hr />
 
 <div class = "container" >
-
     <div class = "row" >
-        <div class = "col-xs-12">
+
+    </div>
+    <div class = "row_icons" >
+        <div class = "col-xs-1 col-xs-offset-2 col-sm-3 text-center icon">
+        <i class="fa fa-home" style="font-size: 200%"></i>
+            <p>Capacity:</p>
 
         </div>
-    </div>
-    <div class = "row icons" >
-        <div class = "col-xs-6 col-sm-3 text-center icon">
-            <p>Icon 1</p>
+        <div class = "col-xs-1 col-sm-2 text-center icon">
+        <i class="fa fa-users" style="font-size: 200%"></i>
+             <p>Shared:</p>
         </div>
-        <div class = "col-xs-6 col-sm-3 text-center icon">
-            <p>Icon 2</p>
-        </div>
-        <div class = "col-xs-6 col-sm-3 text-center icon">
-        	 <p>Icon 3</p>
-        </div>
-        <div class = "col-xs-6 col-sm-3 text-center icon">
-        	 <p>Icon 4</p>
+        <div class = "col-xs-1 col-sm-3 text-center icon">
+         <i class="fa fa-bed" style="font-size: 200%"></i>
+            <p>Beds:</p>
         </div>
     </div>
 </div>
-
+<hr />
 <div class = "container" >
     <div class = "row" >
-        <div class = "col-xs-12 col-xs-offset-1">
-            <h5>Hut description</h5>
+        <div class = "col-xs-10 col-xs-offset-1">
+            <h4>Hut description</h4>
             <p><%= @flat.description %></p>
         </div>
     </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+  </div>
+</div>
+
+
+<div class="bs-example">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                   <%= image_tag "sea3.jpeg", id: "" %>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                    <%= image_tag "sea3.jpeg", id: "" %>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                    <%= image_tag "sea3.jpeg", id: "" %>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                    <%= image_tag "sea3.jpeg", id: "" %>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                    <%= image_tag "sea3.jpeg", id: "" %>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                    <%= image_tag "sea3.jpeg", id: "" %>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
