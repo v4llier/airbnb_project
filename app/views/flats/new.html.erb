@@ -1,18 +1,20 @@
 <div class="container">
   <div class="row">
-  <div style="margin: 40px">
+    <div style="margin: 40px">
       <!-- <div class="col-xs-offset-3 col-xs-6"> -->
-        <%= simple_form_for @flat do |f| %>
-        <%= f.input :title, placeholder: 'Add a short description of your hut'%>
-        <%= f.input :description, placeholder: 'about this place'%>
-        <%= f.input :address, placeholder: 'address'%>
-        <%= f.input :city, placeholder: 'city'%>
-        <%= f.input :capacity, placeholder: 'how many people can fit?'%>
-        <%= f.input :price, placeholder: 'what\'s your price?'%>
-        <%= f.submit %>
-        <% end %>
+      <%= simple_form_for @flat do |f| %>
+      <%= f.input :title, placeholder: 'Add a short description of your hut'%>
+      <%= f.input :description, placeholder: 'about this place'%>
+      <%= f.input :address, placeholder: 'address'%>
+      <%= f.input :city, placeholder: 'city'%>
+      <%= f.input :capacity, placeholder: 'how many people can fit?'%>
+      <%= f.input :price, placeholder: 'what\'s your price?'%>
+      <%= f.input :user_id, as: :hidden, value: current_user %>
+      <%= f.submit %>
+      <% end %>
       <!-- </div> -->
     </div>
   </div>
+
 
 </div>
