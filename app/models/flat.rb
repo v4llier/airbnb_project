@@ -3,6 +3,6 @@ class Flat < ActiveRecord::Base
   has_many :unavailabilities
   has_many :bookings
   has_many :images
-
-
+  geocoded_by :built_address
+  after_validation :geocode, if: :built_address_changed?
 end
