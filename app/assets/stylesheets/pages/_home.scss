@@ -5,11 +5,20 @@
 .banner {
   background: url(image_path("img-landing.jpg"));
   background-size: cover;
-  height: 500vh;
+  height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.home-title {
+  flex:1;
+  margin-top: 7em;
+}
+
+.searchform {
+  flex:2;
+  margin-top: 12em;
 }
 
 .banner h1 {
