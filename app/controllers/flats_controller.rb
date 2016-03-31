@@ -12,7 +12,7 @@ class FlatsController < ApplicationController
 
     respond_to do |format|
       if @flat.save
-        format.html { redirect_to flat_path(@flat.id), notice: 'flat was successfully created.' }
+        format.html { redirect_to flat_path(@flat.id), notice: 'Hut was successfully created.' }
         format.json { render :show, status: :created, location: @flat }
       else
         format.html { render :new }
@@ -40,13 +40,13 @@ class FlatsController < ApplicationController
     @user = @flat.user_id
     @flat.destroy
 
-    redirect_to user_path(@user), notice: 'hut was successfully deleted.'
+    redirect_to user_path(@user), notice: 'Hut was successfully deleted.'
   end
 
   def update
     respond_to do |format|
       if @flat.update(flat_params)
-        format.html { redirect_to @flat, notice: 'flat was successfully updated.' }
+        format.html { redirect_to @flat, notice: 'Hut was successfully updated.' }
         format.json { render :show, status: :ok, location: @flat }
       else
         format.html { render :edit }
