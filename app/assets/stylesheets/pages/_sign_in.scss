@@ -1,0 +1,56 @@
+// css for views/sessions/new
+.login-title {
+  font-family: Raleway, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  background: #f25109;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.form-inputs {
+  font: 95% Arial, Helvetica, sans-serif;
+  color: #f25109;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #F7F7F7;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.login-btn {
+  background: #f25109;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.login-btn :hover {
+  background: #f25109;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.other-link {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: none;
+}
+
