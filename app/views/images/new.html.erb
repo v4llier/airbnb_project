@@ -11,8 +11,8 @@
     <%= link_to "back to hut page", flat_path(@flat) %>
   </div>
 
-  <% @flat.images.each do |flat| %>
-    <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill  %>
+  <% @flat.images.each do |image| %>
+    <%= cl_image_tag image.photo, height: 300, width: 400, crop: :fill  %>
   <% end %>
 </div>
 
