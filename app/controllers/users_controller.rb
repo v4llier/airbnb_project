@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @flats = Flat.all.where(user_id: current_user.id)
 
   end
 

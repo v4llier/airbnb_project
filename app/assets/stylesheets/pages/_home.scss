@@ -8,8 +8,17 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.home-title {
+  flex:1;
+  margin-top: 7em;
+}
+
+.searchform {
+  flex:2;
+  margin-top: 12em;
 }
 
 .banner h1 {
@@ -47,7 +56,7 @@ body {
 
 .card-subtitle {
   font-family: Open-sans, sans-serif;
-  color: #f25109;
+  color: #f24537;
   font-size: 30px;
   text-align: center;
 
