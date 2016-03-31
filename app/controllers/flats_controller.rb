@@ -29,7 +29,9 @@ class FlatsController < ApplicationController
   end
 
   def show
-
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+    @booking = Booking.new(start_date: @start_date, end_date: @end_date)
   end
 
   def destroy
