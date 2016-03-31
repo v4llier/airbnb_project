@@ -15,6 +15,10 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.assets.precompile += [
+ 'hella-tite.css'
+ ]
+
 module AirbnbProject
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
