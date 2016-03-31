@@ -1,10 +1,9 @@
 <!-- linked to _sign_in.scss -->
 
 <div class= "login-form">
-
-<br><br>
-<div class="login-title">Please log in</div>
-
+  <br>
+  <br>
+  <div class="login-title">Please log in</div>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,8 +19,5 @@
 <% end %>
 
 <div class="other-link">
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 </div>
-
-</div>
-
