@@ -20,8 +20,7 @@ class BookingsController < ApplicationController
     @booking.user_id = @user.id
 
     if @booking.save
-      byebug
-      redirect_to flat_booking_path(@flat, @booking), notice: 'Booking was successful. I have a pleasant stay !'
+      redirect_to flat_booking_path(@flat, @booking)
     else
       redirect_to flat_path(@flat)
     end
