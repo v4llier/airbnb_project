@@ -1,28 +1,33 @@
-<p>Start date: <%= @start_date %></p>
-<br>
-<p>End date: <%= @end_date %></p>
-<br>
-<p>Guets: <%= @guests %></p>
-<br>
-<p>City: <%= @city %></p>
-<br>
+<div class='wrapper' style="background-color: #EDEFED" >
+  <div class="container text-center" style="padding-top: 10px">
+    <p><strong>From: </strong><%= @start_date %> <strong>to:</strong>
+    <%= @end_date %> </p>
 
-<% @flats.each do |flat|  %>
-  <p>Hut title : <%= flat.title %></p>
-  <p>Hut address : <%= flat.address %></p>
-  <p>Hut capacity : <%= flat.capacity %></p>
+    <p> <strong>  Guets: </strong><%= @guests %> </p>
+    <p> <strong>City:</strong> <%= @city %></p>
 
-  <%= form_tag flat_path(flat), :method => 'get' do %>
-  <%= hidden_field_tag :start_date, @start_date %>
-  <%= hidden_field_tag :end_date, @end_date %>
-  <%= hidden_field_tag :guests, @guests %>
-  <%= submit_tag "View details" , { class: 'btn btn-primary btn-danger'} %>
-  <% end %>
+   </div>
 
-
-  <p> -------------------------------- </p>
-<% end %>
-
-
-
-
+  <div class="container">
+    <div style="padding: 0 500 0 0">
+      <% @flats.each do |flat| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= flat.images[0].photo if flat.images[0] != nil %>);">
+        <div class="card-category">
+          <%= flat.city %>
+        </div>
+        <%= image_tag flat.user.picture  , class: "card-user avatar" %>
+        <div class="card-description">
+          <h2><%= flat.title %></h2>
+          <p><%= flat.address %></p>
+           <%= form_tag flat_path(flat), :method => 'get' do %>
+            <%= hidden_field_tag :start_date, @start_date %>
+            <%= hidden_field_tag :end_date, @end_date %>
+            <%= hidden_field_tag :guests, @guests %>
+            <%= submit_tag "View details" , { class: 'btn btn-primary btn-danger'} %>
+           <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
