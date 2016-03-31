@@ -1,6 +1,4 @@
-
 // css for views/sessions/new
-
 .login-title {
   font-family: Raleway, Helvetica, sans-serif;
   max-width: 400px;
@@ -11,6 +9,10 @@
   font-weight: bold;
   text-align: center;
   background: #f25109;
+}
+
+.login-form {
+  text-align: center;
 }
 
 .form-inputs {
@@ -51,5 +53,3 @@
   padding: 16px;
   background: none;
 }
-
-
