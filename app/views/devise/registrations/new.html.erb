@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<!-- linked to _sign_up.scss -->
+
+<div class="signUp-title">Sign up</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -12,20 +14,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", :class => "signUp-btn" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-
-<!-- <div class="form-style-6">
-<h1>Contact Us</h1>
-<form>
-<input type="text" name="field1" placeholder="Your Name" />
-<input type="email" name="field2" placeholder="Email Address" />
-<textarea name="field3" placeholder="Type your Message"></textarea>
-<input type="submit" value="Send" />
-</form>
-</div>-->
-
-
+<div class="other-link">
+  <%= render "devise/shared/links" %>
+</div>

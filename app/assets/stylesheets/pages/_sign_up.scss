@@ -1,5 +1,6 @@
-// css for views/sessions/new
-.login-title {
+// linked to views/devise/sessions/new
+
+.signUp-title {
   font-family: Raleway, Helvetica, sans-serif;
   max-width: 400px;
   margin: 10px auto;
@@ -9,10 +10,6 @@
   font-weight: bold;
   text-align: center;
   background: #f25109;
-}
-
-.login-form {
-  text-align: center;
 }
 
 .form-inputs {
@@ -28,7 +25,7 @@
   text-align: center;
 }
 
-.login-btn {
+.signUp-btn {
   background: #f25109;
   border-radius: 20px;
   font-family: Arial;
@@ -39,7 +36,7 @@
   text-decoration: none;
 }
 
-.login-btn :hover {
+.signUp-btn :hover {
   background: #f25109;
   color: black;
   font-weight: bold;
@@ -52,4 +49,7 @@
   margin: 10px auto;
   padding: 16px;
   background: none;
+  text-align: center;
 }
+
+
