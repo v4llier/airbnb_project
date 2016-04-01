@@ -34,10 +34,8 @@ class FlatsController < ApplicationController
     @end_date = params[:end_date]
     @alert_message = "You are viewing #{@flat.title}"
     @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
-
     @guests = params[:guests] ? params[:guests].gsub(/[^0-9]/, '').to_i : 1
     @booking = Booking.new(start_date: @start_date, end_date: @end_date, guests: @guests)
-
   end
 
   def destroy
