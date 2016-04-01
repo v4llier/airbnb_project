@@ -6,9 +6,9 @@
       <%= image_tag current_user.picture, class: "avatar-large" %>
     </div>
     <div class="col-xs-9">
-      <p>Email: <%= current_user.email %> <i class="fa fa-pencil"></i></p>
-      <p>First name: <%= current_user.first_name %> <i class="fa fa-pencil"></i></p>
-      <p>Last name: <%= current_user.last_name %> <i class="fa fa-pencil"></i></p>
+      <p>Email: <%= current_user.email %> </p>
+      <p>First name: <%= current_user.first_name %> </p>
+      <p>Last name: <%= current_user.last_name %> </p>
 
 
       <%= link_to "Add New Hut", new_flat_path, :class=>"btn btn-default" %>
@@ -25,17 +25,14 @@
 
           </div>
           <%= link_to "", flat_path(flat), class: "card-link" %>
-
+          <% if current_user == nil %>
+          <% elsif flat.user.id == current_user.id %>
           <div class="card-edit" style="z-index:999;"><%= link_to ("<i class='fa fa-pencil'></i>").html_safe, edit_flat_path(flat)%></div>
-          <div class="card-delete" style="z-index:999;"><%= link_to ("<i class='fa fa-trash'></i>").html_safe, flat_path(flat), method: :delete, data: { confirm: "Are you sure?" } %></div>
+          <div class="card-delete" style="z-index:999;"><%= link_to ("<i class='fa fa-trash'></i>").html_safe, flat_path(flat), method: :delete %></div>
+          <%end %>
         </div>
         <% end %>
       </div>
-
-
-
-
-    </p>
+    </div>
   </div>
-</div>
 </div>
