@@ -1,12 +1,22 @@
 .avatar {
   width: 30px;
+  height: 30px;
   border-radius: 50%;
-
+  overflow: hidden;
 }
+
+#avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    }
 
 .avatar-large {
   width: 100px;
+  height: 100px;
   border-radius: 50%;
+  overflow: hidden;
 }
 .avatar-bordered {
   width: 30px;

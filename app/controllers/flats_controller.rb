@@ -12,7 +12,7 @@ class FlatsController < ApplicationController
 
     respond_to do |format|
       if @flat.save
-        format.html { redirect_to flat_path(@flat.id), notice: 'Hut was successfully created.' }
+        format.html { redirect_to new_flat_image_path(@flat), notice: 'Hut was successfully created.' }
         format.json { render :show, status: :created, location: @flat }
       else
         format.html { render :new }
