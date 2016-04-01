@@ -7,8 +7,7 @@
   <% end %>
 <% end %>
 
-<p>TEST</p>
 
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x400&
-markers=color:blue%7Clabel:HH%7C40.718217,-73.998284&key=AIzaSyD3H1FlStGILoB7y9L8dPEXfm3pZsSNMB4"%>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=400x400&
+ +markers=color:blue%7Clabel:HH%7C#{@flat.latitude},#{@flat.longitude}&key=AIzaSyD3H1FlStGILoB7y9L8dPEXfm3pZsSNMB4" %>
 
