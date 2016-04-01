@@ -4,5 +4,11 @@ class Flat < ActiveRecord::Base
   has_many :bookings
   has_many :images
   geocoded_by :built_address
-  after_validation :geocode, if: :built_address_changed?
+  after_validation :geocode, if: :address_changed?
+
+
+  def built_address
+    self.address + ", " + self.city
+  end
+
 end
