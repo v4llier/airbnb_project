@@ -105,6 +105,20 @@
       <%= render 'flats/geomap' %>
     </div>
 
+<h2>
+  <%= pluralize @flat.reviews.size, "review" %>
+</h2>
+
+<div id="reviews">
+  <% if @flat.reviews.blank? %>
+    Be the first to leave a review for <%= @flat.name %>
+  <% else %>
+    <% @flat.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+
 
   </div>
 </div>
