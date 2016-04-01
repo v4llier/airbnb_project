@@ -6,6 +6,7 @@ gem 'font-awesome-sass', '~> 4.5.0'
 gem 'simple_form'
 gem "autoprefixer-rails"
 gem 'devise'
+gem "geocoder"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'faker'
 gem 'rails', '4.2.6'

@@ -1,4 +1,16 @@
+
+<% if current_user == nil %>
+<% elsif @flat.user.id == current_user.id %>
+<div class="modify">
+  <%= link_to "Edit Hut", edit_flat_path(@flat), class: "btn btn-default" %>
+  <%= link_to "Edit Image(s)", new_flat_image_path(@flat), class: "btn btn-default" %>
+</div>
+<% end %>
+
+
+
 <div class="banner_detail" style="background-image: url(https://media.giphy.com/media/V8oovAwCDG02A/giphy.gif);">
+
   <div class="banner-content">
     <span class=detail-title>Details about your selection</span>
   </div>
@@ -8,7 +20,7 @@
   <div class="row" id="avatar_row">
     <div class="col-xs-2 col-xs-offset-2 text-center" id = "avatar_column" style= "" >
       <br><br>
-      <%= image_tag @flat.user.picture  , id: "avatar" %>
+      <%= image_tag @flat.user.picture  , id: "avatar-large" %>
     </div>
 
     <div class="col-xs-8 text-center" id ="avatar_column" style= "" >
@@ -86,13 +98,16 @@
     <% if current_user == nil %>
     <% elsif @flat.user.id == current_user.id %>
     <%= link_to "Edit image(s)", new_flat_image_path(@flat), :class => "submit-btn" %>
-    </button>
     <% end %>
-
 
     <div>
     <br>
       <%= render 'bookings/form' %>
+    </div>
+
+    <div>
+    <br>
+      <%= render 'flats/geomap' %>
     </div>
 
   </div>

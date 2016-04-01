@@ -1,22 +1,33 @@
 <%= form_for [@flat, @image]  do |f| %>
 
-<div class="container">
-
-    <div class="field">
-      <%= f.label :photo %><br>
-      <%= f.file_field :photo %>
-      <%= f.hidden_field :photo_cache %>
-    </div>
+<div class="container" style="margin-top: 40px">
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %>
+  </div>
+  <br>
 
   <div class="actions">
-    <%= f.submit %>
-    <%= link_to "back to hut page", flat_path(@flat) %>
+    <%= f.submit "Upload Image" %>
+    <%= link_to "Finish Upload", flat_path(@flat), class: "btn btn-primary" %>
   </div>
 
-    <% @flat.images.each do |image| %>
-      <%= cl_image_tag image.photo, height: 300, width: 400, crop: :fill  %>
+
+  <div class="row" style="margin-top: 40px">
+  <% @flat.images.each do |image| %>
+    <div class="col-xs-12 col-md-6" style="margin-bottom: 40px">
+
+    <%= cl_image_tag image.photo, height: 300, width: 400, crop: :fill  %>
+    <div>
+    <%= link_to ("<i class='fa fa-trash'></i>").html_safe, flat_image_path(image.flat_id, image), method: :delete %>
+    </div>
+    </div>
     <% end %>
+  </div>
 
 </div>
 
 <% end %>
+
+

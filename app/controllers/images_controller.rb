@@ -11,7 +11,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to new_flat_image_path, notice: 'hut attachment was successfully created.' }
+        format.html { redirect_to new_flat_image_path, notice: 'Image successfully added' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
@@ -23,11 +23,12 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   # DELETE /images/1.json
   def destroy
+    @image = Image.find(params[:id])
     @image.destroy
-    respond_to do |format|
-      format.html { redirect_to images_url, notice: 'hut attachment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+
+    redirect_to new_flat_image_path(@image.flat)
+
   end
 
   private

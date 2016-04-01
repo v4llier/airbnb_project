@@ -12,7 +12,7 @@ class FlatsController < ApplicationController
 
     respond_to do |format|
       if @flat.save
-        format.html { redirect_to flat_path(@flat.id), notice: 'flat was successfully created.' }
+        format.html { redirect_to new_flat_image_path(@flat), notice: 'Hut was successfully created.' }
         format.json { render :show, status: :created, location: @flat }
       else
         format.html { render :new }
@@ -32,6 +32,8 @@ class FlatsController < ApplicationController
   def show
     @start_date = params[:start_date]
     @end_date = params[:end_date]
+    @alert_message = "You are viewing #{@flat.title}"
+    @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
     @guests = params[:guests] ? params[:guests].gsub(/[^0-9]/, '').to_i : 1
     @booking = Booking.new(start_date: @start_date, end_date: @end_date, guests: @guests)
   end
@@ -40,13 +42,13 @@ class FlatsController < ApplicationController
     @user = @flat.user_id
     @flat.destroy
 
-    redirect_to user_path(@user), notice: 'hut was successfully deleted.'
+    redirect_to user_path(@user), notice: 'Hut was successfully deleted.'
   end
 
   def update
     respond_to do |format|
       if @flat.update(flat_params)
-        format.html { redirect_to @flat, notice: 'flat was successfully updated.' }
+        format.html { redirect_to @flat, notice: 'Hut was successfully updated.' }
         format.json { render :show, status: :ok, location: @flat }
       else
         format.html { render :edit }
@@ -75,7 +77,6 @@ class FlatsController < ApplicationController
     redirect_to root_path, alert: "Nothing available for your dates. Try different dates." if @flats.nil?
 
   end
-
 
   private
 
