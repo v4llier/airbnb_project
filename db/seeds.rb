@@ -8,6 +8,7 @@
 
 Unavailability.destroy_all
 Booking.destroy_all
+
 Flat.destroy_all
 User.destroy_all
 
@@ -63,6 +64,33 @@ flat = Flat.create( city:'Chicago', address:'6, main street', capacity: (2..5).t
 Unavailability.create(start_date:"2016-05-21", end_date:"2016-05-30", flat_id: flat.id)
 
 
+images = ["image/upload/v1459505165/kyh47illwyit8vxl6oww.jpg",
+  "image/upload/v1459505183/wkrb4jeof3ji32y808f8.jpg",
+  "image/upload/v1459505196/clbehyptazz23ohjwylv.jpg",
+  "image/upload/v1459505204/uw99meauwlxex9eaxlub.jpg",
+ "image/upload/v1459505213/telhbbaqrncmyht1fhsa.jpg",
+  "image/upload/v1459505220/npvfzndgermjfiaxb7ik.jpg",
+  "image/upload/v1459505228/mk0icgc22hpsuskne8tr.jpg",
+ "image/upload/v1459505240/xslbf7lcx6idl1unimgd.jpg",
+  "image/upload/v1459505253/auikhhrk2s6jdguqf851.jpg",
+ "image/upload/v1459505165/kyh47illwyit8vxl6oww.jpg",
+ "image/upload/v1459505183/wkrb4jeof3ji32y808f8.jpg",
+ "image/upload/v1459505196/clbehyptazz23ohjwylv.jpg",
+  "image/upload/v1459505204/uw99meauwlxex9eaxlub.jpg",
+ "image/upload/v1459505213/telhbbaqrncmyht1fhsa.jpg" ,
+  "image/upload/v1459505220/npvfzndgermjfiaxb7ik.jpg" ,
+  "image/upload/v1459505228/mk0icgc22hpsuskne8tr.jpg",
+ "image/upload/v1459505240/xslbf7lcx6idl1unimgd.jpg",
+  "image/upload/v1459505253/auikhhrk2s6jdguqf851.jpg"]
 
+i = 0
 
+Flat.all.each do |f|
+  image = Image.new
+  image.flat_id = f.id
+  image.photo = open("http://res.cloudinary.com/dysg00rdd/" + images[i])
+  image.save
+  i = i + 1
+  byebug
 
+end
