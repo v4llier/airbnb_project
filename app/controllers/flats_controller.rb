@@ -78,14 +78,6 @@ class FlatsController < ApplicationController
 
   end
 
-  def built_address
-
-      @city = params[:city]
-      @address = params[:address]
-      @address + ", " + @city
-  end
-
-
   private
 
   def search_error?(city, guests, start_date, end_date )
