@@ -2,6 +2,6 @@
   <%= f.input :start_date, input_html: { class: 'form-control input-lg' } %>
   <%= f.input :end_date, input_html: { class: 'form-control input-lg' } %>
   <%= hidden_field_tag :guests, @guests %>
-  <%= f.button :submit, "Book !", class: 'btn btn-danger btn-lg' %>
+  <%= f.button :submit, "Book !", :class => "submit-btn" %>
 <% end %>
 
