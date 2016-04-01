@@ -91,6 +91,5 @@ Flat.all.each do |f|
   image.photo = open("http://res.cloudinary.com/dysg00rdd/" + images[i])
   image.save
   i = i + 1
-  byebug
 
 end
