@@ -44,16 +44,16 @@
   <div class = "row_icons" >
     <div class = "col-xs-1 col-xs-offset-2 col-sm-3 text-center icon">
       <i class="fa fa-home" style="font-size: 200%"></i>
-      <p>Capacity:</p>
+      <p>Capacity: <%= @flat.capacity %></p>
 
     </div>
     <div class = "col-xs-1 col-sm-2 text-center icon">
       <i class="fa fa-users" style="font-size: 200%"></i>
-      <p>Shared:</p>
+      <p>Shared: ok </p>
     </div>
     <div class = "col-xs-1 col-sm-3 text-center icon">
      <i class="fa fa-bed" style="font-size: 200%"></i>
-     <p>Beds:</p>
+     <p>Beds: <%= @flat.capacity.fdiv(2).round %></%></p>
    </div>
  </div>
 </div>
@@ -104,20 +104,6 @@
     <div>
       <%= render 'flats/geomap' %>
     </div>
-
-<h2>
-  <%= pluralize @flat.reviews.size, "review" %>
-</h2>
-
-<div id="reviews">
-  <% if @flat.reviews.blank? %>
-    Be the first to leave a review for <%= @flat.name %>
-  <% else %>
-    <% @flat.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-    <% end %>
-  <% end %>
-</div>
 
 
   </div>
