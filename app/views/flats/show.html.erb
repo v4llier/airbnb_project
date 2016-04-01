@@ -104,7 +104,10 @@
 
     <div>
     <br>
-      <%= render 'bookings/form' %>
+    <% if !@booking.nil? %>
+    <%= render 'bookings/form' %>
+    <% else  true %>
+    <%end %>
     </div>
 
     <div>
