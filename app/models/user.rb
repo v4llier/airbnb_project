@@ -22,4 +22,6 @@ class User < ActiveRecord::Base
     end
   end
 
+  mount_uploader :picture, PictureUploader
+
 end
